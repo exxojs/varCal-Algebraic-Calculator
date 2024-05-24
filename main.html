@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>varCal - Line Calculator Series</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <header class="stickyHeader">
+            <div class="space">
+                <button id="cal1" onclick="goPageOne()"></button>
+            <button id="cal2" onclick="goPageTwo()"></button>
+            <button id="cal3" onclick="goPageThree()"></button>
+            </div>
+            <div class="logo"> <h1 align="center"> varCal</h1></div>
+        </header>
+
+        <div class="main">
+            
+        <div class="pageGen">
+            <div class="pageOne">
+            <h1 align="center">Ax + By = C </h1>
+            <p>variables A, B, C are values; numbers only</p>
+            <div class="contentBox2">
+                <div>
+                    <label for="a1">Line Equation 1</label>
+                    <input type="number" id="a1" placeholder="Ax-value" required/>
+                  </div>
+                  <div>
+                    <input type="number" id="b1" placeholder="By-value" required/>
+                  </div>
+                  <div>
+                    <input type="number" id="c1" placeholder="C-value" required/>
+                  </div>
+                  <div>
+                    <label for="a2">Line Equation 2</label>
+                    <input type="number" id="a2" placeholder="Ax-value "required />
+                  </div>
+                  <div>
+                    <input type="number" id="b2" placeholder="By-value"required />
+                  </div>
+                  <div>
+                    <input type="number" id="c2" placeholder="C-value"required/>
+                  </div>
+                  <div id="result2"></div>
+            
+            </div>
+            <button id="submitVar" onclick="solveEquations()">CALCULATE!</button>
+            
+            <div class="bottomG">
+                <h2 align="center" id="nigga">Result will display here :3</h2>
+               </div> <!--END OF BOTTOM-->
+               <div class="plugIns">
+                <nav class="navbar">
+                    <ul class="social-icons">
+                        <li>
+                          <a href="https://www.facebook.com/JSEPH.Dz/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-facebook"></i>
+                          </a>
+                        </li>
+                        
+                        <li>
+                          <a href="https://www.instagram.com/rai.hiroaki/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/exxojs" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                          </a>
+                        </li>
+                      </ul>
+                  </nav>
+           </div> <!--END OF plugIns-->
+        </div>
+        
+        <!--===============================================================-->
+
+            <div class="pageTwo">
+                <h1 align="center">Calculator</h1>
+            <div class="contentBox">
+                <div class="container">
+                    <input type="text" class="display" readonly placeholder="Click buttons!">
+
+                    <div class="buttons">
+                        <button data-value="AC" class="operator">AC</button>
+                        <button data-value="DEL" class="operator">DEL</button>
+                        <button data-value="%" class="operator">%</button>
+                        <button data-value="/" class="operator">÷</button>
+
+                        <button data-value="7">7</button>
+                        <button data-value="8">8</button>
+                        <button data-value="9">9</button>
+                        <button data-value="*" class="operator">×</button>
+
+                        <button data-value="4">4</button>
+                        <button data-value="5">5</button>
+                        <button data-value="6">6</button>
+                        <button data-value="-" class="operator">-</button>
+
+                        <button data-value="1">1</button>
+                        <button data-value="2">2</button>
+                        <button data-value="3">3</button>
+                        <button data-value="+" class="operator">+</button>
+
+                        <button data-value="0">0</button>
+                        <button data-value="00">00</button>
+                        <button data-value=".">.</button>
+                        <button data-value="=" class="operator">=</button>
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="plugIns">
+                <nav class="navbar">
+                    <ul class="social-icons">
+                        <li>
+                          <a href="https://www.facebook.com/JSEPH.Dz/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-facebook"></i>
+                          </a>
+                        </li>
+                        
+                        <li>
+                          <a href="https://www.instagram.com/rai.hiroaki/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/exxojs" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                                                  </a>
+                        </li>
+                      </ul>
+                  </nav>
+           </div> <!--END OF plugIns-->
+            </div>
+           
+
+           <div class="pageThree">
+            <h1 align="center">2-Point Line Calculator</h1>
+            <div class="contentBox">
+                <form id="line-form">
+                    <label for="x1">X1:</label>
+                    <input type="number" id="xSubOne" name="x1" required>
+                    <br>
+                    <label for="y1">Y1:</label>
+                    <input type="number" id="ySubOne" name="y1" required>
+                    <br>
+                    <label for="x2">X2:</label>
+                    <input type="number" id="xSubTwo" name="x2" required>
+                    <br>
+                    <label for="y2">Y2:</label>
+                    <input type="number" id="ySubTwo" name="y2" required>
+                    <br>
+                    <button type="submit" id="slopeBtn">Calculate Line</button>
+                  </form>
+
+
+        </div> <!--END OF pageGen-->
+
+        <div class="plugIns">
+            <nav class="navbar">
+                <ul class="social-icons">
+                    <li>
+                      <a href="https://www.facebook.com/JSEPH.Dz/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook"></i>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a href="https://www.instagram.com/rai.hiroaki/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/exxojs" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                                          </a>
+                    </li>
+                  </ul>
+              </nav>
+       </div> <!--END OF plugIns-->
+
+       <div class="bottom">
+        <h2 align="center" id="lineIt">Result will display here :3</h2>
+       </div> <!--END OF BOTTOM-->
+        </div> <!--END OF mainContent-->
+
+       
+           
+
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/92839e2d3d.js" crossorigin="anonymous"></script>
+</body>
+</html>
